@@ -23,6 +23,8 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+On a phone, open this website in the phone’s browser. On the same Wi-Fi, run `npm run dev -- --hostname 0.0.0.0` and visit `http://` plus your computer’s address plus `:3000`. The form sits on top and the five drafts stack underneath, so you can edit and copy each one with your thumb.
+
 To check the rewrite logic without the browser:
 
 ```bash

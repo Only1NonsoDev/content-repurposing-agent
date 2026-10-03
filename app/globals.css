@@ -74,6 +74,10 @@ button { cursor: pointer; }
   color: var(--accent-deep);
 }
 
+h1, h2, h3, p, q, label, .job, .lede, .footnote, .chip {
+  overflow-wrap: break-word;
+}
+
 h1 {
   margin: 0;
   font-family: var(--display);
@@ -132,6 +136,8 @@ h1 {
   gap: 22px;
   align-items: start;
 }
+
+.layout > * { min-width: 0; }
 
 .panel, .card, .empty, .claim-board, .steps {
   background: var(--paper);
@@ -325,6 +331,14 @@ textarea, input[type="url"], input[type="text"] {
   align-items: center;
 }
 
+.card-top > span {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .kicker {
   margin: 0;
   color: var(--mark, var(--accent-deep));
@@ -406,5 +420,81 @@ textarea, input[type="url"], input[type="text"] {
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
   .panel { position: static; }
-  .page { width: min(1180px, calc(100% - 20px)); }
+  .page {
+    width: min(1180px, calc(100% - 24px));
+    padding-top: 20px;
+    padding-bottom: calc(40px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 640px) {
+  html, body { overflow-x: clip; }
+
+  h1 { font-size: clamp(1.85rem, 10vw, 2.35rem); line-height: 1.05; }
+  .deck { font-size: 1rem; }
+
+  .mode {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .chip {
+    width: fit-content;
+    max-width: 100%;
+    min-height: 44px;
+    white-space: normal;
+  }
+
+  .source-box { min-height: 160px; max-height: 240px; }
+  textarea, input[type="url"], input[type="text"], .editor, .slide-title, .inline {
+    font-size: 16px;
+  }
+
+  .editor, .slide-title, .inline {
+    border-color: var(--line-strong);
+    background: white;
+  }
+  .slide-title, .inline { min-height: 48px; }
+
+  .actions { flex-direction: column; }
+  .primary, .secondary, .copy, .jump a {
+    min-height: 48px;
+    padding: 12px 16px;
+  }
+  .actions .primary, .actions .secondary, .stage-head .copy { width: 100%; }
+
+  .stage-head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .stage-head h2 { font-size: 1.6rem; }
+
+  .jump a {
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 calc(50% - 6px);
+  }
+
+  .card-top, .slide-top {
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  .card-top > span {
+    width: 100%;
+    justify-content: stretch;
+  }
+  .card-top .copy { flex: 1; }
+
+  .card h3 { font-size: 1.45rem; }
+  .claim-board h3, .empty h2 { font-size: 1.45rem; }
+
+  a.id {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 12px;
+  }
+
+  .notes q, .claims p { font-size: 1rem; }
 }
