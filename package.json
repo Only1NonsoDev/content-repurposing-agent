@@ -1,0 +1,27 @@
+{
+  "name": "content-repurposing-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Turn one article into native posts for LinkedIn, X, Instagram, email, and a 30-second video script.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "tsx --test lib/repurpose.test.ts"
+  },
+  "dependencies": {
+    "next": "^15.5.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2"
+  }
+}
