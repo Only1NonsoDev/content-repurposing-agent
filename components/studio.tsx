@@ -94,29 +94,37 @@ export function Studio() {
   }
 
   return (
-    <div className="page">
+    <div className="shell">
       <a className="skip" href="#studio">
         Skip to the article
       </a>
-      <header className="masthead">
-        <p className="eyebrow">Portfolio demo</p>
-        <h1>Content Repurposing Agent</h1>
-        <p className="deck">
-          Paste one article. Get a LinkedIn post, an X thread, an Instagram carousel, an email, and a 30-second
-          script. Each piece is written for that channel, with the source lines attached.
-        </p>
-        <div className={`mode ${modeClass}`}>
-          <span className="chip">
-            <i />
-            {chip}
+      <header className="topbar">
+        <a className="brand" href="#studio">
+          <span className="mark" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+              <path d="M6 11h20M6 16h14M6 21h9" stroke="#fff8f0" strokeWidth="2.8" strokeLinecap="round" />
+            </svg>
           </span>
-          <p>{modeDetail}</p>
-        </div>
+          <span className="brand-name">Repurpose</span>
+        </a>
+        <span className={`chip ${modeClass}`}>
+          <i />
+          {chip}
+        </span>
       </header>
 
-      <main className="layout">
+      <main>
+        <section className="hero">
+          <h1>Content Repurposing Agent</h1>
+          <p className="deck">
+            Paste one article. Get a LinkedIn post, an X thread, an Instagram carousel, an email, and a 30-second
+            script. Each piece is written for that channel, with the source lines attached.
+          </p>
+          <p className="mode-detail">{modeDetail}</p>
+        </section>
+
         <form id="studio" className="panel" onSubmit={onSubmit}>
-          <h2>01 · Source</h2>
+          <h2>Source</h2>
           <div className="field">
             <label htmlFor="source">Article text</label>
             <textarea
@@ -142,7 +150,7 @@ export function Studio() {
             <p className="help">If a site blocks the reader, paste the text instead. Private links are refused.</p>
           </div>
           <div className="field">
-            <h2>02 · Voice</h2>
+            <h2>Voice</h2>
             <label htmlFor="voice">Brand voice</label>
             <textarea
               id="voice"
@@ -202,10 +210,14 @@ export function Studio() {
               </div>
             </div>
           )}
-          <p className="footnote">
-            Nothing is posted to a social network. Source notes quote your article so you can see where each idea came from.
-          </p>
         </section>
+        <footer className="site-foot">
+          <div>
+            <strong>Content Repurposing Agent</strong>
+            <p>A portfolio demo. Drafts stay on this page and are not posted anywhere.</p>
+          </div>
+          <p>Source notes quote the article, so you can see which lines each draft used.</p>
+        </footer>
       </main>
     </div>
   );

@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import { Fraunces, Outfit } from "next/font/google";
+import { Fredoka, Nunito } from "next/font/google";
 
 import "./globals.css";
 
-const display = Fraunces({
+const display = Fredoka({
   subsets: ["latin"],
   variable: "--font-display",
+  weight: ["500", "600", "700"],
 });
 
-const sans = Outfit({
+const sans = Nunito({
   subsets: ["latin"],
   variable: "--font-sans",
+  weight: ["500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
