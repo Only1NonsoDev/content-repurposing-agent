@@ -24,7 +24,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-On a phone, open this website in the phone’s browser. On the same Wi-Fi, run `npm run dev -- --hostname 0.0.0.0` and visit `http://` plus your computer’s address plus `:3000`. The form sits on top and the five drafts stack underneath, so you can edit and copy each one with your thumb.
+On a phone, open this website in the phone’s browser. On the same Wi-Fi, run `npm run dev -- --hostname 0.0.0.0` and visit `http://` plus your computer’s address plus `:3000`. That address is the same site you open on a laptop. On a phone the form sits on top and the five drafts stack in one column, with full-width buttons you can hit with a thumb. On a wide screen the article and the brand voice sit side by side, and the five drafts share the width in a grid.
 
 To check the rewrite logic without the browser:
 

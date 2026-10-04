@@ -164,6 +164,7 @@ export function PackView({
         </ol>
       </section>
 
+      <div className="formats">
       <article className="card" id="linkedin" data-platform="linkedin">
         <div className="card-top">
           <p className="kicker">LinkedIn</p>
@@ -332,6 +333,7 @@ export function PackView({
         />
         <SourceNotes ids={result.pack.video.claimIds} claims={result.claims} />
       </article>
+      </div>
     </div>
   );
 }

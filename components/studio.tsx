@@ -94,26 +94,28 @@ export function Studio() {
   }
 
   return (
-    <div className="shell">
+    <div className="page">
       <a className="skip" href="#studio">
         Skip to the article
       </a>
       <header className="topbar">
-        <a className="brand" href="#studio">
-          <span className="mark" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
-              <path d="M6 11h20M6 16h14M6 21h9" stroke="#fff8f0" strokeWidth="2.8" strokeLinecap="round" />
-            </svg>
+        <div className="bar">
+          <a className="brand" href="#studio">
+            <span className="mark" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+                <path d="M6 11h20M6 16h14M6 21h9" stroke="#fff8f0" strokeWidth="2.8" strokeLinecap="round" />
+              </svg>
+            </span>
+            <span className="brand-name">Repurpose</span>
+          </a>
+          <span className={`chip ${modeClass}`}>
+            <i />
+            {chip}
           </span>
-          <span className="brand-name">Repurpose</span>
-        </a>
-        <span className={`chip ${modeClass}`}>
-          <i />
-          {chip}
-        </span>
+        </div>
       </header>
 
-      <main>
+      <main className="shell">
         <section className="hero">
           <h1>Content Repurposing Agent</h1>
           <p className="deck">
@@ -124,42 +126,48 @@ export function Studio() {
         </section>
 
         <form id="studio" className="panel" onSubmit={onSubmit}>
-          <h2>Source</h2>
-          <div className="field">
-            <label htmlFor="source">Article text</label>
-            <textarea
-              id="source"
-              className="source-box"
-              value={source}
-              onChange={(event) => setSource(event.target.value)}
-              placeholder="Paste the blog post here."
-            />
-            <p className="count">{words === 0 ? "No article yet" : `${words} words`}</p>
-          </div>
-          <div className="or">or</div>
-          <div className="field">
-            <label htmlFor="url">Public link</label>
-            <input
-              id="url"
-              type="url"
-              inputMode="url"
-              placeholder="https://example.com/blog/post"
-              value={url}
-              onChange={(event) => setUrl(event.target.value)}
-            />
-            <p className="help">If a site blocks the reader, paste the text instead. Private links are refused.</p>
-          </div>
-          <div className="field">
-            <h2>Voice</h2>
-            <label htmlFor="voice">Brand voice</label>
-            <textarea
-              id="voice"
-              className="voice-box"
-              value={voice}
-              onChange={(event) => setVoice(event.target.value)}
-              placeholder="Direct and practical. Audience: content marketers. Avoid: synergy, leverage."
-            />
-            <p className="help">Tone, who it is for, and words to skip. Leave it blank for a direct tone.</p>
+          <div className="source-layout">
+            <div className="source-main">
+              <h2>Source</h2>
+              <div className="field">
+                <label htmlFor="source">Article text</label>
+                <textarea
+                  id="source"
+                  className="source-box"
+                  value={source}
+                  onChange={(event) => setSource(event.target.value)}
+                  placeholder="Paste the blog post here."
+                />
+                <p className="count">{words === 0 ? "No article yet" : `${words} words`}</p>
+              </div>
+              <div className="or">or</div>
+              <div className="field">
+                <label htmlFor="url">Public link</label>
+                <input
+                  id="url"
+                  type="url"
+                  inputMode="url"
+                  placeholder="https://example.com/blog/post"
+                  value={url}
+                  onChange={(event) => setUrl(event.target.value)}
+                />
+                <p className="help">If a site blocks the reader, paste the text instead. Private links are refused.</p>
+              </div>
+            </div>
+            <div className="source-side">
+              <h2>Voice</h2>
+              <div className="field">
+                <label htmlFor="voice">Brand voice</label>
+                <textarea
+                  id="voice"
+                  className="voice-box"
+                  value={voice}
+                  onChange={(event) => setVoice(event.target.value)}
+                  placeholder="Direct and practical. Audience: content marketers. Avoid: synergy, leverage."
+                />
+                <p className="help">Tone, who it is for, and words to skip. Leave it blank for a direct tone.</p>
+              </div>
+            </div>
           </div>
           <div className="actions">
             <button type="button" className="secondary" onClick={loadSample}>
