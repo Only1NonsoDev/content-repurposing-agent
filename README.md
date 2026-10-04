@@ -1,3 +1,4 @@
+**Live preview:** https://content-repurposing-agent-only1nonsodev.vercel.app
 # Content Repurposing Agent
 
 Marketers often spend hours turning one blog post into a LinkedIn post, an X thread, an Instagram carousel, an email, and a short video script. The drafts sound the same because someone pasted the blog intro into every box.
